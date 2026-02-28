@@ -1,0 +1,572 @@
+{
+  "metadata": {
+    "source": "bdolytics.com API (apiv2.bdolytics.com)",
+    "arshaApi": "api.arsha.io/v2/mena",
+    "region": "NA (bdolytics) / MENA (arsha)",
+    "generatedAt": "2026-03-01T01:00:00+03:00",
+    "notes": "Item IDs are consistent between bdolytics and Arsha API. Spellbound Catalyst (820936) has no market data (NPC shop item). Higher-grade elixir versions can substitute at 1:3 ratio in draught recipes."
+  },
+  "harmonyDraught": {
+    "note": "Harmony Draught is crafted from all 5 sub-draughts. Each sub-draught requires 4 specific elixirs (x30 each) + 10 Spellbound Catalyst via Simple Alchemy (Processing > Manufacture)."
+  },
+  "spellboundCatalyst": {
+    "itemId": 820936,
+    "name": "Spellbound Catalyst",
+    "bdolyticsUrl": "https://bdolytics.com/en/NA/db/item/820936",
+    "arshaApiAvailable": false,
+    "obtainedFrom": "Old Moon Manager's Shop",
+    "buyPrice": 1000000,
+    "weight": 0.1,
+    "usedInAllDraughts": true,
+    "quantityPerDraught": 10
+  },
+  "draughts": {
+    "furyDraught": {
+      "productId": 1389,
+      "productName": "Fury Draught",
+      "recipe": {
+        "type": "Simple Alchemy (Processing > Manufacture)",
+        "ingredients": [
+          { "itemId": 704, "name": "Elixir of Fury", "quantity": 30 },
+          { "itemId": 672, "name": "Elixir of Frenzy", "quantity": 30 },
+          { "itemId": 700, "name": "Elixir of Concentration", "quantity": 30 },
+          { "itemId": 1180, "name": "Elixir of Destruction", "quantity": 30 },
+          { "itemId": 820936, "name": "Spellbound Catalyst", "quantity": 10 }
+        ],
+        "alternateNote": "Higher-grade versions of each elixir can substitute at 1:3 ratio (e.g., 10 Elixir of Endless Fury replaces 30 Elixir of Fury)"
+      },
+      "elixirs": [
+        {
+          "itemId": 704,
+          "name": "Elixir of Fury",
+          "bdolyticsUrl": "https://bdolytics.com/en/NA/db/item/704",
+          "arshaApiUrl": "https://api.arsha.io/v2/mena/item?id=704",
+          "effect": "All AP +5",
+          "duration": "10 min",
+          "alchemyLevel": "Beginner 1",
+          "higherGrade": { "itemId": 705, "name": "Elixir of Endless Fury", "alchemyLevel": "Skilled 1" },
+          "recipe": {
+            "recipeId": 411,
+            "ingredients": [
+              { "itemId": 5001, "name": "Ash Sap", "quantity": 1 },
+              { "itemId": 5409, "name": "Dwarf Mushroom", "quantity": 4 },
+              { "itemId": 6213, "name": "Bear Blood", "quantity": 4 },
+              { "itemId": 6656, "name": "Purified Water", "quantity": 3 }
+            ]
+          }
+        },
+        {
+          "itemId": 672,
+          "name": "Elixir of Frenzy",
+          "bdolyticsUrl": "https://bdolytics.com/en/NA/db/item/672",
+          "arshaApiUrl": "https://api.arsha.io/v2/mena/item?id=672",
+          "effect": "All DP -5, All AP +10",
+          "duration": "10 min",
+          "alchemyLevel": "Skilled 1",
+          "higherGrade": { "itemId": 673, "name": "Elixir of Endless Frenzy", "alchemyLevel": "Artisan 1" },
+          "recipe": {
+            "recipeId": 393,
+            "ingredients": [
+              { "itemId": 6601, "name": "Oil of Regeneration", "quantity": 1 },
+              { "itemId": 5301, "name": "Clear Liquid Reagent", "quantity": 5 },
+              { "itemId": 5414, "name": "Ghost Mushroom", "quantity": 2 },
+              { "itemId": 5960, "name": "Trace of Nature", "quantity": 3 },
+              { "itemId": 5010, "name": "Cedar Sap", "quantity": 5 }
+            ]
+          }
+        },
+        {
+          "itemId": 700,
+          "name": "Elixir of Concentration",
+          "bdolyticsUrl": "https://bdolytics.com/en/NA/db/item/700",
+          "arshaApiUrl": "https://api.arsha.io/v2/mena/item?id=700",
+          "effect": "All Accuracy +8",
+          "duration": "10 min",
+          "alchemyLevel": "Beginner 1",
+          "higherGrade": { "itemId": 701, "name": "Elixir of Advanced Concentration", "alchemyLevel": "Skilled 1" },
+          "recipe": {
+            "recipeId": 409,
+            "ingredients": [
+              { "itemId": 5301, "name": "Clear Liquid Reagent", "quantity": 1 },
+              { "itemId": 5410, "name": "Cloud Mushroom", "quantity": 3 },
+              { "itemId": 6213, "name": "Bear Blood", "quantity": 3 },
+              { "itemId": 5439, "name": "Wild Grass", "quantity": 2 }
+            ]
+          }
+        },
+        {
+          "itemId": 1180,
+          "name": "Elixir of Destruction",
+          "bdolyticsUrl": "https://bdolytics.com/en/NA/db/item/1180",
+          "arshaApiUrl": "https://api.arsha.io/v2/mena/item?id=1180",
+          "effect": "All Special Attack Extra Damage +1%",
+          "duration": "10 min",
+          "alchemyLevel": "Skilled 1",
+          "higherGrade": { "itemId": 1181, "name": "Elixir of Lethal Destruction", "alchemyLevel": "Artisan 1" },
+          "recipe": {
+            "recipeId": 619,
+            "ingredients": [
+              { "itemId": 6602, "name": "Oil of Storms", "quantity": 1 },
+              { "itemId": 5960, "name": "Trace of Nature", "quantity": 3 },
+              { "itemId": 5301, "name": "Clear Liquid Reagent", "quantity": 5 },
+              { "itemId": 4802, "name": "Powder of Flame", "quantity": 5 },
+              { "itemId": 5024, "name": "Snowfield Cedar Sap", "quantity": 7 }
+            ]
+          }
+        }
+      ]
+    },
+    "adaptationDraught": {
+      "productId": 1391,
+      "productName": "Adaptation Draught",
+      "recipe": {
+        "type": "Simple Alchemy (Processing > Manufacture)",
+        "ingredients": [
+          { "itemId": 716, "name": "Defense Elixir", "quantity": 30 },
+          { "itemId": 782, "name": "Helix Elixir", "quantity": 30 },
+          { "itemId": 708, "name": "Elixir of Life", "quantity": 30 },
+          { "itemId": 722, "name": "Elixir of Endurance", "quantity": 30 },
+          { "itemId": 820936, "name": "Spellbound Catalyst", "quantity": 10 }
+        ],
+        "alternateNote": "Higher-grade versions of each elixir can substitute at 1:3 ratio"
+      },
+      "elixirs": [
+        {
+          "itemId": 716,
+          "name": "Defense Elixir",
+          "bdolyticsUrl": "https://bdolytics.com/en/NA/db/item/716",
+          "arshaApiUrl": "https://api.arsha.io/v2/mena/item?id=716",
+          "effect": "All Damage Reduction +5",
+          "duration": "10 min",
+          "alchemyLevel": "Beginner 1",
+          "higherGrade": { "itemId": 717, "name": "Elixir of Steel Defense", "alchemyLevel": "Skilled 1" },
+          "recipe": {
+            "recipeId": 417,
+            "ingredients": [
+              { "itemId": 5301, "name": "Clear Liquid Reagent", "quantity": 1 },
+              { "itemId": 5001, "name": "Ash Sap", "quantity": 6 },
+              { "itemId": 6205, "name": "Pig Blood", "quantity": 5 },
+              { "itemId": 6656, "name": "Purified Water", "quantity": 3 }
+            ]
+          }
+        },
+        {
+          "itemId": 782,
+          "name": "Helix Elixir",
+          "bdolyticsUrl": "https://bdolytics.com/en/NA/db/item/782",
+          "arshaApiUrl": "https://api.arsha.io/v2/mena/item?id=782",
+          "effect": "All Evasion +8",
+          "duration": "10 min",
+          "alchemyLevel": "Apprentice 1",
+          "higherGrade": { "itemId": 783, "name": "Splendid Helix Elixir", "alchemyLevel": "Professional 1" },
+          "recipe": {
+            "recipeId": 446,
+            "ingredients": [
+              { "itemId": 5020, "name": "Thuja Sap", "quantity": 6 },
+              { "itemId": 5007, "name": "Monk's Branch", "quantity": 3 },
+              { "itemId": 6353, "name": "Clown's Blood", "quantity": 2 },
+              { "itemId": 4802, "name": "Powder of Flame", "quantity": 2 },
+              { "itemId": 6656, "name": "Purified Water", "quantity": 3 }
+            ]
+          }
+        },
+        {
+          "itemId": 708,
+          "name": "Elixir of Life",
+          "bdolyticsUrl": "https://bdolytics.com/en/NA/db/item/708",
+          "arshaApiUrl": "https://api.arsha.io/v2/mena/item?id=708",
+          "effect": "Max HP +100",
+          "duration": "10 min",
+          "alchemyLevel": "Beginner 1",
+          "higherGrade": { "itemId": 709, "name": "Elixir of Strong Life", "alchemyLevel": "Skilled 1" },
+          "recipe": {
+            "recipeId": 413,
+            "ingredients": [
+              { "itemId": 5302, "name": "Pure Powder Reagent", "quantity": 1 },
+              { "itemId": 517, "name": "HP Potion (Small)", "quantity": 3 },
+              { "itemId": 5402, "name": "Silver Azalea", "quantity": 3 },
+              { "itemId": 6203, "name": "Fox Blood", "quantity": 5 }
+            ]
+          }
+        },
+        {
+          "itemId": 722,
+          "name": "Elixir of Endurance",
+          "bdolyticsUrl": "https://bdolytics.com/en/NA/db/item/722",
+          "arshaApiUrl": "https://api.arsha.io/v2/mena/item?id=722",
+          "effect": "Max Stamina +100",
+          "duration": "10 min",
+          "alchemyLevel": "Beginner 1",
+          "higherGrade": { "itemId": 723, "name": "Elixir of Overwhelming Endurance", "alchemyLevel": "Skilled 1" },
+          "recipe": {
+            "recipeId": 420,
+            "ingredients": [
+              { "itemId": 5302, "name": "Pure Powder Reagent", "quantity": 1 },
+              { "itemId": 5004, "name": "Birch Sap", "quantity": 5 },
+              { "itemId": 6213, "name": "Bear Blood", "quantity": 4 },
+              { "itemId": 5409, "name": "Dwarf Mushroom", "quantity": 2 }
+            ]
+          }
+        }
+      ]
+    },
+    "potentialDraught": {
+      "productId": 1393,
+      "productName": "Potential Draught",
+      "recipe": {
+        "type": "Simple Alchemy (Processing > Manufacture)",
+        "ingredients": [
+          { "itemId": 688, "name": "Elixir of Wind", "quantity": 30 },
+          { "itemId": 692, "name": "Elixir of Spells", "quantity": 30 },
+          { "itemId": 762, "name": "Elixir of Shock", "quantity": 30 },
+          { "itemId": 690, "name": "Elixir of Swiftness", "quantity": 30 },
+          { "itemId": 820936, "name": "Spellbound Catalyst", "quantity": 10 }
+        ],
+        "alternateNote": "Higher-grade versions of each elixir can substitute at 1:3 ratio"
+      },
+      "elixirs": [
+        {
+          "itemId": 688,
+          "name": "Elixir of Wind",
+          "bdolyticsUrl": "https://bdolytics.com/en/NA/db/item/688",
+          "arshaApiUrl": "https://api.arsha.io/v2/mena/item?id=688",
+          "effect": "Attack Speed +2",
+          "duration": "10 min",
+          "alchemyLevel": "Apprentice 1",
+          "higherGrade": { "itemId": 689, "name": "Elixir of Flowing Wind", "alchemyLevel": "Professional 1" },
+          "recipe": {
+            "recipeId": 401,
+            "ingredients": [
+              { "itemId": 6355, "name": "Wise Man's Blood", "quantity": 1 },
+              { "itemId": 5407, "name": "Fortune Teller Mushroom", "quantity": 5 },
+              { "itemId": 4801, "name": "Powder of Darkness", "quantity": 2 },
+              { "itemId": 5003, "name": "Pine Sap", "quantity": 5 }
+            ]
+          }
+        },
+        {
+          "itemId": 692,
+          "name": "Elixir of Spells",
+          "bdolyticsUrl": "https://bdolytics.com/en/NA/db/item/692",
+          "arshaApiUrl": "https://api.arsha.io/v2/mena/item?id=692",
+          "effect": "Casting Speed +2",
+          "duration": "10 min",
+          "alchemyLevel": "Apprentice 1",
+          "higherGrade": { "itemId": 693, "name": "Elixir of Agile Spells", "alchemyLevel": "Professional 1" },
+          "recipe": {
+            "recipeId": 403,
+            "ingredients": [
+              { "itemId": 6352, "name": "Tyrant's Blood", "quantity": 1 },
+              { "itemId": 5403, "name": "Fire Flake Flower", "quantity": 5 },
+              { "itemId": 4801, "name": "Powder of Darkness", "quantity": 2 },
+              { "itemId": 5002, "name": "Maple Sap", "quantity": 3 }
+            ]
+          }
+        },
+        {
+          "itemId": 762,
+          "name": "Elixir of Shock",
+          "bdolyticsUrl": "https://bdolytics.com/en/NA/db/item/762",
+          "arshaApiUrl": "https://api.arsha.io/v2/mena/item?id=762",
+          "effect": "Critical Hit +2",
+          "duration": "10 min",
+          "alchemyLevel": "Apprentice 1",
+          "higherGrade": { "itemId": 763, "name": "Elixir of Strong Shock", "alchemyLevel": "Professional 1" },
+          "recipe": {
+            "recipeId": 441,
+            "ingredients": [
+              { "itemId": 6353, "name": "Clown's Blood", "quantity": 1 },
+              { "itemId": 5412, "name": "Tiger Mushroom", "quantity": 5 },
+              { "itemId": 4805, "name": "Powder of Time", "quantity": 3 },
+              { "itemId": 5010, "name": "Cedar Sap", "quantity": 7 }
+            ]
+          }
+        },
+        {
+          "itemId": 690,
+          "name": "Elixir of Swiftness",
+          "bdolyticsUrl": "https://bdolytics.com/en/NA/db/item/690",
+          "arshaApiUrl": "https://api.arsha.io/v2/mena/item?id=690",
+          "effect": "Movement Speed +2",
+          "duration": "10 min",
+          "alchemyLevel": "Apprentice 1",
+          "higherGrade": { "itemId": 691, "name": "Elixir of Intrepid Swiftness", "alchemyLevel": "Professional 1" },
+          "recipe": {
+            "recipeId": null,
+            "ingredients": [
+              { "itemId": 6351, "name": "Legendary Beast's Blood", "quantity": 1 },
+              { "itemId": 5408, "name": "Arrow Mushroom", "quantity": 5 },
+              { "itemId": 4801, "name": "Powder of Darkness", "quantity": 2 },
+              { "itemId": 5004, "name": "Birch Sap", "quantity": 5 }
+            ]
+          }
+        }
+      ]
+    },
+    "corruptionDraught": {
+      "productId": 1395,
+      "productName": "Corruption Draught",
+      "recipe": {
+        "type": "Simple Alchemy (Processing > Manufacture)",
+        "ingredients": [
+          { "itemId": 680, "name": "Elixir of Perforation", "quantity": 30 },
+          { "itemId": 686, "name": "Elixir of Death", "quantity": 30 },
+          { "itemId": 676, "name": "Elixir of Draining", "quantity": 30 },
+          { "itemId": 712, "name": "Grim Reaper's Elixir", "quantity": 30 },
+          { "itemId": 820936, "name": "Spellbound Catalyst", "quantity": 10 }
+        ],
+        "alternateNote": "Higher-grade versions of each elixir can substitute at 1:3 ratio"
+      },
+      "elixirs": [
+        {
+          "itemId": 680,
+          "name": "Elixir of Perforation",
+          "bdolyticsUrl": "https://bdolytics.com/en/NA/db/item/680",
+          "arshaApiUrl": "https://api.arsha.io/v2/mena/item?id=680",
+          "effect": "Defense Nullifying Damage +7 per Back Attack",
+          "duration": "10 min",
+          "alchemyLevel": "Skilled 1",
+          "higherGrade": { "itemId": 681, "name": "Elixir of Brutal Perforation", "alchemyLevel": "Artisan 1" },
+          "recipe": {
+            "recipeId": 397,
+            "ingredients": [
+              { "itemId": 6604, "name": "Oil of Corruption", "quantity": 1 },
+              { "itemId": 5301, "name": "Clear Liquid Reagent", "quantity": 4 },
+              { "itemId": 5417, "name": "Bluffer Mushroom", "quantity": 5 },
+              { "itemId": 5960, "name": "Trace of Nature", "quantity": 2 },
+              { "itemId": 5003, "name": "Pine Sap", "quantity": 5 }
+            ]
+          }
+        },
+        {
+          "itemId": 686,
+          "name": "Elixir of Death",
+          "bdolyticsUrl": "https://bdolytics.com/en/NA/db/item/686",
+          "arshaApiUrl": "https://api.arsha.io/v2/mena/item?id=686",
+          "effect": "Defense Nullifying Damage +7 per Critical Hit",
+          "duration": "10 min",
+          "alchemyLevel": "Skilled 1",
+          "higherGrade": { "itemId": 687, "name": "Brutal Death Elixir", "alchemyLevel": "Artisan 1" },
+          "recipe": {
+            "recipeId": 400,
+            "ingredients": [
+              { "itemId": 6605, "name": "Oil of Tranquility", "quantity": 1 },
+              { "itemId": 5301, "name": "Clear Liquid Reagent", "quantity": 6 },
+              { "itemId": 5418, "name": "Ancient Mushroom", "quantity": 2 },
+              { "itemId": 5960, "name": "Trace of Nature", "quantity": 2 },
+              { "itemId": 5001, "name": "Ash Sap", "quantity": 7 }
+            ]
+          }
+        },
+        {
+          "itemId": 676,
+          "name": "Elixir of Draining",
+          "bdolyticsUrl": "https://bdolytics.com/en/NA/db/item/676",
+          "arshaApiUrl": "https://api.arsha.io/v2/mena/item?id=676",
+          "effect": "Recover 9 HP per Critical Hit",
+          "duration": "10 min",
+          "alchemyLevel": "Skilled 1",
+          "higherGrade": { "itemId": 677, "name": "Elixir of Strong Draining", "alchemyLevel": "Artisan 1" },
+          "recipe": {
+            "recipeId": 395,
+            "ingredients": [
+              { "itemId": 6603, "name": "Oil of Fortitude", "quantity": 1 },
+              { "itemId": 5301, "name": "Clear Liquid Reagent", "quantity": 4 },
+              { "itemId": 5416, "name": "Hump Mushroom", "quantity": 3 },
+              { "itemId": 5960, "name": "Trace of Nature", "quantity": 2 },
+              { "itemId": 5004, "name": "Birch Sap", "quantity": 4 }
+            ]
+          }
+        },
+        {
+          "itemId": 712,
+          "name": "Grim Reaper's Elixir",
+          "bdolyticsUrl": "https://bdolytics.com/en/NA/db/item/712",
+          "arshaApiUrl": "https://api.arsha.io/v2/mena/item?id=712",
+          "effect": "Recover 3 HP per hit",
+          "duration": "10 min",
+          "alchemyLevel": "Skilled 1",
+          "higherGrade": { "itemId": 713, "name": "Grim Soul Reaper's Elixir", "alchemyLevel": "Artisan 1" },
+          "recipe": {
+            "recipeId": 415,
+            "ingredients": [
+              { "itemId": 6603, "name": "Oil of Fortitude", "quantity": 1 },
+              { "itemId": 5302, "name": "Pure Powder Reagent", "quantity": 4 },
+              { "itemId": 5411, "name": "Sky Mushroom", "quantity": 2 },
+              { "itemId": 5960, "name": "Trace of Nature", "quantity": 4 },
+              { "itemId": 5007, "name": "Monk's Branch", "quantity": 2 }
+            ]
+          }
+        }
+      ]
+    },
+    "berserkDraught": {
+      "productId": 1397,
+      "productName": "Berserk Draught",
+      "recipe": {
+        "type": "Simple Alchemy (Processing > Manufacture)",
+        "ingredients": [
+          { "itemId": 696, "name": "Elixir of Assassination", "quantity": 30 },
+          { "itemId": 698, "name": "Elixir of Detection", "quantity": 30 },
+          { "itemId": 718, "name": "Elixir of Carnage", "quantity": 30 },
+          { "itemId": 720, "name": "Elixir of Sky", "quantity": 30 },
+          { "itemId": 820936, "name": "Spellbound Catalyst", "quantity": 10 }
+        ],
+        "alternateNote": "Higher-grade versions of each elixir can substitute at 1:3 ratio"
+      },
+      "elixirs": [
+        {
+          "itemId": 696,
+          "name": "Elixir of Assassination",
+          "bdolyticsUrl": "https://bdolytics.com/en/NA/db/item/696",
+          "arshaApiUrl": "https://api.arsha.io/v2/mena/item?id=696",
+          "effect": "Back Attack Damage +10%",
+          "duration": "10 min",
+          "alchemyLevel": "Skilled 1",
+          "higherGrade": { "itemId": 697, "name": "Elixir of Lethal Assassin", "alchemyLevel": "Artisan 1" },
+          "recipe": {
+            "recipeId": 406,
+            "ingredients": [
+              { "itemId": 6601, "name": "Oil of Regeneration", "quantity": 1 },
+              { "itemId": 5302, "name": "Pure Powder Reagent", "quantity": 5 },
+              { "itemId": 5419, "name": "Amanita Mushroom", "quantity": 4 },
+              { "itemId": 5960, "name": "Trace of Nature", "quantity": 2 },
+              { "itemId": 5406, "name": "Everlasting Herb", "quantity": 2 }
+            ]
+          }
+        },
+        {
+          "itemId": 698,
+          "name": "Elixir of Detection",
+          "bdolyticsUrl": "https://bdolytics.com/en/NA/db/item/698",
+          "arshaApiUrl": "https://api.arsha.io/v2/mena/item?id=698",
+          "effect": "Critical Hit Damage +10%",
+          "duration": "10 min",
+          "alchemyLevel": "Skilled 1",
+          "higherGrade": { "itemId": 699, "name": "Elixir of Sharp Detection", "alchemyLevel": "Artisan 1" },
+          "recipe": {
+            "recipeId": 407,
+            "ingredients": [
+              { "itemId": 6602, "name": "Oil of Storms", "quantity": 1 },
+              { "itemId": 5302, "name": "Pure Powder Reagent", "quantity": 6 },
+              { "itemId": 5420, "name": "Truffle Mushroom", "quantity": 3 },
+              { "itemId": 5960, "name": "Trace of Nature", "quantity": 3 },
+              { "itemId": 5008, "name": "Old Tree Bark", "quantity": 2 }
+            ]
+          }
+        },
+        {
+          "itemId": 718,
+          "name": "Elixir of Carnage",
+          "bdolyticsUrl": "https://bdolytics.com/en/NA/db/item/718",
+          "arshaApiUrl": "https://api.arsha.io/v2/mena/item?id=718",
+          "effect": "Down Attack Damage +10%",
+          "duration": "10 min",
+          "alchemyLevel": "Skilled 1",
+          "higherGrade": { "itemId": 719, "name": "Elixir of Brutal Carnage", "alchemyLevel": "Artisan 1" },
+          "recipe": {
+            "recipeId": 418,
+            "ingredients": [
+              { "itemId": 6604, "name": "Oil of Corruption", "quantity": 1 },
+              { "itemId": 5302, "name": "Pure Powder Reagent", "quantity": 7 },
+              { "itemId": 5412, "name": "Tiger Mushroom", "quantity": 2 },
+              { "itemId": 5960, "name": "Trace of Nature", "quantity": 3 },
+              { "itemId": 5006, "name": "Spirit's Leaf", "quantity": 2 }
+            ]
+          }
+        },
+        {
+          "itemId": 720,
+          "name": "Elixir of Sky",
+          "bdolyticsUrl": "https://bdolytics.com/en/NA/db/item/720",
+          "arshaApiUrl": "https://api.arsha.io/v2/mena/item?id=720",
+          "effect": "Air Attack Damage +10%",
+          "duration": "10 min",
+          "alchemyLevel": "Skilled 1",
+          "higherGrade": { "itemId": 721, "name": "Merciless Sky Elixir", "alchemyLevel": "Artisan 1" },
+          "recipe": {
+            "recipeId": 419,
+            "ingredients": [
+              { "itemId": 6605, "name": "Oil of Tranquility", "quantity": 1 },
+              { "itemId": 5302, "name": "Pure Powder Reagent", "quantity": 6 },
+              { "itemId": 5413, "name": "Emperor Mushroom", "quantity": 1 },
+              { "itemId": 5960, "name": "Trace of Nature", "quantity": 4 },
+              { "itemId": 5005, "name": "Bloody Tree Knot", "quantity": 2 }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  "allIngredientItems": {
+    "reagentsAndOils": [
+      { "itemId": 5301, "name": "Clear Liquid Reagent" },
+      { "itemId": 5302, "name": "Pure Powder Reagent" },
+      { "itemId": 6601, "name": "Oil of Regeneration" },
+      { "itemId": 6602, "name": "Oil of Storms" },
+      { "itemId": 6603, "name": "Oil of Fortitude" },
+      { "itemId": 6604, "name": "Oil of Corruption" },
+      { "itemId": 6605, "name": "Oil of Tranquility" }
+    ],
+    "sapsAndTimber": [
+      { "itemId": 5001, "name": "Ash Sap" },
+      { "itemId": 5002, "name": "Maple Sap" },
+      { "itemId": 5003, "name": "Pine Sap" },
+      { "itemId": 5004, "name": "Birch Sap" },
+      { "itemId": 5005, "name": "Bloody Tree Knot" },
+      { "itemId": 5006, "name": "Spirit's Leaf" },
+      { "itemId": 5007, "name": "Monk's Branch" },
+      { "itemId": 5008, "name": "Old Tree Bark" },
+      { "itemId": 5010, "name": "Cedar Sap" },
+      { "itemId": 5020, "name": "Thuja Sap" },
+      { "itemId": 5024, "name": "Snowfield Cedar Sap" }
+    ],
+    "mushrooms": [
+      { "itemId": 5407, "name": "Fortune Teller Mushroom" },
+      { "itemId": 5408, "name": "Arrow Mushroom" },
+      { "itemId": 5409, "name": "Dwarf Mushroom" },
+      { "itemId": 5410, "name": "Cloud Mushroom" },
+      { "itemId": 5411, "name": "Sky Mushroom" },
+      { "itemId": 5412, "name": "Tiger Mushroom" },
+      { "itemId": 5413, "name": "Emperor Mushroom" },
+      { "itemId": 5414, "name": "Ghost Mushroom" },
+      { "itemId": 5416, "name": "Hump Mushroom" },
+      { "itemId": 5417, "name": "Bluffer Mushroom" },
+      { "itemId": 5418, "name": "Ancient Mushroom" },
+      { "itemId": 5419, "name": "Amanita Mushroom" },
+      { "itemId": 5420, "name": "Truffle Mushroom" }
+    ],
+    "bloodsAndFluids": [
+      { "itemId": 6203, "name": "Fox Blood" },
+      { "itemId": 6205, "name": "Pig Blood" },
+      { "itemId": 6213, "name": "Bear Blood" },
+      { "itemId": 6351, "name": "Legendary Beast's Blood" },
+      { "itemId": 6352, "name": "Tyrant's Blood" },
+      { "itemId": 6353, "name": "Clown's Blood" },
+      { "itemId": 6355, "name": "Wise Man's Blood" }
+    ],
+    "powdersAndTraces": [
+      { "itemId": 4801, "name": "Powder of Darkness" },
+      { "itemId": 4802, "name": "Powder of Flame" },
+      { "itemId": 4805, "name": "Powder of Time" },
+      { "itemId": 5960, "name": "Trace of Nature" }
+    ],
+    "herbs": [
+      { "itemId": 5402, "name": "Silver Azalea" },
+      { "itemId": 5403, "name": "Fire Flake Flower" },
+      { "itemId": 5406, "name": "Everlasting Herb" },
+      { "itemId": 5439, "name": "Wild Grass" }
+    ],
+    "misc": [
+      { "itemId": 517, "name": "HP Potion (Small)" },
+      { "itemId": 6656, "name": "Purified Water" }
+    ]
+  },
+  "arshaApiNotes": {
+    "endpoint": "https://api.arsha.io/v2/mena/item?id={ITEM_ID}",
+    "allElixirIdsWork": true,
+    "spellboundCatalystNotOnMarket": true,
+    "elixirItemIds": [704, 672, 700, 1180, 716, 782, 708, 722, 688, 692, 762, 690, 680, 686, 676, 712, 696, 698, 718, 720],
+    "ingredientItemIds": [5001, 5002, 5003, 5004, 5005, 5006, 5007, 5008, 5010, 5020, 5024, 5301, 5302, 5402, 5403, 5406, 5407, 5408, 5409, 5410, 5411, 5412, 5413, 5414, 5416, 5417, 5418, 5419, 5420, 5439, 4801, 4802, 4805, 5960, 6203, 6205, 6213, 6351, 6352, 6353, 6355, 6601, 6602, 6603, 6604, 6605, 6656, 517]
+  }
+}
