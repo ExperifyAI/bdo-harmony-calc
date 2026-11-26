@@ -1,0 +1,854 @@
+{
+  "region": "MENA",
+  "source": "https://bdolytics.com/api/trpc/market.getMarket?input=%7B%22language%22%3A%22en%22%2C%22region%22%3A%22MENA%22%7D",
+  "result": {
+    "data": [
+      {
+        "itemId": 517,
+        "name": "HP Potion (Small)",
+        "price": 51,
+        "inStock": 3272,
+        "totalTrades": 5123339,
+        "fourteenDayVolume": 842,
+        "updatedAt": 1795723200000
+      },
+      {
+        "itemId": 672,
+        "name": "Elixir of Frenzy",
+        "price": 720000,
+        "inStock": 6426,
+        "totalTrades": 22716940,
+        "fourteenDayVolume": 2687,
+        "updatedAt": 1795723200000
+      },
+      {
+        "itemId": 673,
+        "name": "Elixir of Endless Frenzy",
+        "price": 1410000,
+        "inStock": 625,
+        "totalTrades": 4406662,
+        "fourteenDayVolume": 545,
+        "updatedAt": 1795723200000
+      },
+      {
+        "itemId": 676,
+        "name": "Elixir of Draining",
+        "price": 474000,
+        "inStock": 16125,
+        "totalTrades": 7329196,
+        "fourteenDayVolume": 3130,
+        "updatedAt": 1795723200000
+      },
+      {
+        "itemId": 677,
+        "name": "Elixir of Strong Draining",
+        "price": 1360000,
+        "inStock": 0,
+        "totalTrades": 3221861,
+        "fourteenDayVolume": 442,
+        "updatedAt": 1795723200000
+      },
+      {
+        "itemId": 680,
+        "name": "Elixir of Perforation",
+        "price": 282000,
+        "inStock": 0,
+        "totalTrades": 9458030,
+        "fourteenDayVolume": 4736,
+        "updatedAt": 1795723200000
+      },
+      {
+        "itemId": 681,
+        "name": "Elixir of Brutal Perforation",
+        "price": 535000,
+        "inStock": 0,
+        "totalTrades": 2534163,
+        "fourteenDayVolume": 753,
+        "updatedAt": 1795723200000
+      },
+      {
+        "itemId": 686,
+        "name": "Elixir of Death",
+        "price": 570000,
+        "inStock": 1289,
+        "totalTrades": 8177325,
+        "fourteenDayVolume": 3577,
+        "updatedAt": 1795723200000
+      },
+      {
+        "itemId": 687,
+        "name": "Brutal Death Elixir",
+        "price": 1230000,
+        "inStock": 0,
+        "totalTrades": 3762721,
+        "fourteenDayVolume": 726,
+        "updatedAt": 1795723200000
+      },
+      {
+        "itemId": 688,
+        "name": "Elixir of Wind",
+        "price": 142000,
+        "inStock": 0,
+        "totalTrades": 5091141,
+        "fourteenDayVolume": 1826,
+        "updatedAt": 1795723200000
+      },
+      {
+        "itemId": 689,
+        "name": "Elixir of Flowing Wind",
+        "price": 307000,
+        "inStock": 0,
+        "totalTrades": 1258265,
+        "fourteenDayVolume": 322,
+        "updatedAt": 1795723200000
+      },
+      {
+        "itemId": 690,
+        "name": "Elixir of Swiftness",
+        "price": 100000,
+        "inStock": 295,
+        "totalTrades": 9360645,
+        "fourteenDayVolume": 2809,
+        "updatedAt": 1795723200000
+      },
+      {
+        "itemId": 691,
+        "name": "Elixir of Intrepid Swiftness",
+        "price": 225000,
+        "inStock": 50,
+        "totalTrades": 2022883,
+        "fourteenDayVolume": 470,
+        "updatedAt": 1795723200000
+      },
+      {
+        "itemId": 692,
+        "name": "Elixir of Spells",
+        "price": 139000,
+        "inStock": 5255,
+        "totalTrades": 5156600,
+        "fourteenDayVolume": 1642,
+        "updatedAt": 1795723200000
+      },
+      {
+        "itemId": 693,
+        "name": "Elixir of Agile Spells",
+        "price": 185000,
+        "inStock": 0,
+        "totalTrades": 978979,
+        "fourteenDayVolume": 229,
+        "updatedAt": 1795723200000
+      },
+      {
+        "itemId": 696,
+        "name": "Elixir of Assassination",
+        "price": 505000,
+        "inStock": 39495,
+        "totalTrades": 8222028,
+        "fourteenDayVolume": 4719,
+        "updatedAt": 1795723200000
+      },
+      {
+        "itemId": 697,
+        "name": "Elixir of Lethal Assassin",
+        "price": 1160000,
+        "inStock": 200,
+        "totalTrades": 3861730,
+        "fourteenDayVolume": 954,
+        "updatedAt": 1795723200000
+      },
+      {
+        "itemId": 698,
+        "name": "Elixir of Detection",
+        "price": 494000,
+        "inStock": 1537,
+        "totalTrades": 12472000,
+        "fourteenDayVolume": 6398,
+        "updatedAt": 1795723200000
+      },
+      {
+        "itemId": 699,
+        "name": "Elixir of Sharp Detection",
+        "price": 1840000,
+        "inStock": 8243,
+        "totalTrades": 4388045,
+        "fourteenDayVolume": 1473,
+        "updatedAt": 1795723200000
+      },
+      {
+        "itemId": 700,
+        "name": "Elixir of Concentration",
+        "price": 51500,
+        "inStock": 0,
+        "totalTrades": 12421943,
+        "fourteenDayVolume": 3350,
+        "updatedAt": 1795723200000
+      },
+      {
+        "itemId": 701,
+        "name": "Elixir of Advanced Concentration",
+        "price": 108000,
+        "inStock": 0,
+        "totalTrades": 3447574,
+        "fourteenDayVolume": 668,
+        "updatedAt": 1795723200000
+      },
+      {
+        "itemId": 704,
+        "name": "Elixir of Fury",
+        "price": 73500,
+        "inStock": 0,
+        "totalTrades": 14455877,
+        "fourteenDayVolume": 3565,
+        "updatedAt": 1795723200000
+      },
+      {
+        "itemId": 705,
+        "name": "Elixir of Endless Fury",
+        "price": 159000,
+        "inStock": 0,
+        "totalTrades": 3434470,
+        "fourteenDayVolume": 1118,
+        "updatedAt": 1795723200000
+      },
+      {
+        "itemId": 708,
+        "name": "Elixir of Life",
+        "price": 56500,
+        "inStock": 265,
+        "totalTrades": 10346538,
+        "fourteenDayVolume": 2307,
+        "updatedAt": 1795723200000
+      },
+      {
+        "itemId": 709,
+        "name": "Elixir of Strong Life",
+        "price": 134000,
+        "inStock": 47,
+        "totalTrades": 4001592,
+        "fourteenDayVolume": 522,
+        "updatedAt": 1795723200000
+      },
+      {
+        "itemId": 712,
+        "name": "Grim Reaper's Elixir",
+        "price": 655000,
+        "inStock": 0,
+        "totalTrades": 13350035,
+        "fourteenDayVolume": 3001,
+        "updatedAt": 1795723200000
+      },
+      {
+        "itemId": 713,
+        "name": "Grim Soul Reaper's Elixir",
+        "price": 1400000,
+        "inStock": 0,
+        "totalTrades": 3966795,
+        "fourteenDayVolume": 571,
+        "updatedAt": 1795723200000
+      },
+      {
+        "itemId": 716,
+        "name": "Defense Elixir",
+        "price": 116000,
+        "inStock": 530,
+        "totalTrades": 10473105,
+        "fourteenDayVolume": 1937,
+        "updatedAt": 1795723200000
+      },
+      {
+        "itemId": 717,
+        "name": "Elixir of Steel Defense",
+        "price": 231000,
+        "inStock": 0,
+        "totalTrades": 3005185,
+        "fourteenDayVolume": 595,
+        "updatedAt": 1795723200000
+      },
+      {
+        "itemId": 718,
+        "name": "Elixir of Carnage",
+        "price": 620000,
+        "inStock": 186,
+        "totalTrades": 7016533,
+        "fourteenDayVolume": 1791,
+        "updatedAt": 1795723200000
+      },
+      {
+        "itemId": 719,
+        "name": "Elixir of Brutal Carnage",
+        "price": 1420000,
+        "inStock": 0,
+        "totalTrades": 2768222,
+        "fourteenDayVolume": 392,
+        "updatedAt": 1795723200000
+      },
+      {
+        "itemId": 720,
+        "name": "Elixir of Sky",
+        "price": 800000,
+        "inStock": 0,
+        "totalTrades": 6173078,
+        "fourteenDayVolume": 4135,
+        "updatedAt": 1795723200000
+      },
+      {
+        "itemId": 721,
+        "name": "Merciless Sky Elixir",
+        "price": 1730000,
+        "inStock": 0,
+        "totalTrades": 1806597,
+        "fourteenDayVolume": 758,
+        "updatedAt": 1795723200000
+      },
+      {
+        "itemId": 722,
+        "name": "Elixir of Endurance",
+        "price": 82500,
+        "inStock": 0,
+        "totalTrades": 5086283,
+        "fourteenDayVolume": 507,
+        "updatedAt": 1795723200000
+      },
+      {
+        "itemId": 723,
+        "name": "Elixir of Overwhelming Endurance",
+        "price": 188000,
+        "inStock": 0,
+        "totalTrades": 926645,
+        "fourteenDayVolume": 318,
+        "updatedAt": 1795723200000
+      },
+      {
+        "itemId": 762,
+        "name": "Elixir of Shock",
+        "price": 133000,
+        "inStock": 4725,
+        "totalTrades": 15837906,
+        "fourteenDayVolume": 1819,
+        "updatedAt": 1795723200000
+      },
+      {
+        "itemId": 763,
+        "name": "Elixir of Strong Shock",
+        "price": 270000,
+        "inStock": 0,
+        "totalTrades": 3305540,
+        "fourteenDayVolume": 279,
+        "updatedAt": 1795723200000
+      },
+      {
+        "itemId": 782,
+        "name": "Helix Elixir",
+        "price": 153000,
+        "inStock": 0,
+        "totalTrades": 6250409,
+        "fourteenDayVolume": 967,
+        "updatedAt": 1795723200000
+      },
+      {
+        "itemId": 783,
+        "name": "Splendid Helix Elixir",
+        "price": 314000,
+        "inStock": 0,
+        "totalTrades": 1214212,
+        "fourteenDayVolume": 339,
+        "updatedAt": 1795723200000
+      },
+      {
+        "itemId": 1180,
+        "name": "Elixir of Destruction",
+        "price": 670000,
+        "inStock": 8662,
+        "totalTrades": 5933346,
+        "fourteenDayVolume": 2066,
+        "updatedAt": 1795723200000
+      },
+      {
+        "itemId": 1181,
+        "name": "Elixir of Lethal Destruction",
+        "price": 1440000,
+        "inStock": 0,
+        "totalTrades": 2538893,
+        "fourteenDayVolume": 457,
+        "updatedAt": 1795723200000
+      },
+      {
+        "itemId": 1389,
+        "name": "Fury Draught",
+        "price": 9100000,
+        "inStock": 0,
+        "totalTrades": 298001,
+        "fourteenDayVolume": 443,
+        "updatedAt": 1795723200000
+      },
+      {
+        "itemId": 1391,
+        "name": "Adaptation Draught",
+        "price": 8950000,
+        "inStock": 0,
+        "totalTrades": 1138573,
+        "fourteenDayVolume": 672,
+        "updatedAt": 1795723200000
+      },
+      {
+        "itemId": 1393,
+        "name": "Potential Draught",
+        "price": 5750000,
+        "inStock": 337,
+        "totalTrades": 214723,
+        "fourteenDayVolume": 380,
+        "updatedAt": 1795723200000
+      },
+      {
+        "itemId": 1395,
+        "name": "Corruption Draught",
+        "price": 9350000,
+        "inStock": 0,
+        "totalTrades": 208405,
+        "fourteenDayVolume": 809,
+        "updatedAt": 1795723200000
+      },
+      {
+        "itemId": 1397,
+        "name": "Berserk Draught",
+        "price": 9350000,
+        "inStock": 948,
+        "totalTrades": 197809,
+        "fourteenDayVolume": 317,
+        "updatedAt": 1795723200000
+      },
+      {
+        "itemId": 1399,
+        "name": "Harmony Draught",
+        "price": 42700000,
+        "inStock": 3465,
+        "totalTrades": 1960747,
+        "fourteenDayVolume": 1380,
+        "updatedAt": 1795723200000
+      },
+      {
+        "itemId": 4801,
+        "name": "Powder of Darkness",
+        "price": 7800,
+        "inStock": 0,
+        "totalTrades": 274718439,
+        "fourteenDayVolume": 80876,
+        "updatedAt": 1795723200000
+      },
+      {
+        "itemId": 4802,
+        "name": "Powder of Flame",
+        "price": 5800,
+        "inStock": 0,
+        "totalTrades": 351645599,
+        "fourteenDayVolume": 82740,
+        "updatedAt": 1795723200000
+      },
+      {
+        "itemId": 4805,
+        "name": "Powder of Time",
+        "price": 14100,
+        "inStock": 36990,
+        "totalTrades": 198320530,
+        "fourteenDayVolume": 48210,
+        "updatedAt": 1795723200000
+      },
+      {
+        "itemId": 5001,
+        "name": "Ash Sap",
+        "price": 46600,
+        "inStock": 0,
+        "totalTrades": 122541749,
+        "fourteenDayVolume": 83723,
+        "updatedAt": 1795723200000
+      },
+      {
+        "itemId": 5002,
+        "name": "Maple Sap",
+        "price": 30600,
+        "inStock": 40255,
+        "totalTrades": 168173757,
+        "fourteenDayVolume": 89664,
+        "updatedAt": 1795723200000
+      },
+      {
+        "itemId": 5003,
+        "name": "Pine Sap",
+        "price": 46000,
+        "inStock": 12680,
+        "totalTrades": 175277377,
+        "fourteenDayVolume": 101253,
+        "updatedAt": 1795723200000
+      },
+      {
+        "itemId": 5004,
+        "name": "Birch Sap",
+        "price": 26200,
+        "inStock": 0,
+        "totalTrades": 133849933,
+        "fourteenDayVolume": 104467,
+        "updatedAt": 1795723200000
+      },
+      {
+        "itemId": 5005,
+        "name": "Bloody Tree Knot",
+        "price": 5950,
+        "inStock": 0,
+        "totalTrades": 129868979,
+        "fourteenDayVolume": 59127,
+        "updatedAt": 1795723200000
+      },
+      {
+        "itemId": 5006,
+        "name": "Spirit's Leaf",
+        "price": 16300,
+        "inStock": 0,
+        "totalTrades": 171827333,
+        "fourteenDayVolume": 77535,
+        "updatedAt": 1795723200000
+      },
+      {
+        "itemId": 5007,
+        "name": "Monk's Branch",
+        "price": 21000,
+        "inStock": 0,
+        "totalTrades": 123233901,
+        "fourteenDayVolume": 61853,
+        "updatedAt": 1795723200000
+      },
+      {
+        "itemId": 5008,
+        "name": "Old Tree Bark",
+        "price": 4660,
+        "inStock": 23176,
+        "totalTrades": 179138248,
+        "fourteenDayVolume": 80831,
+        "updatedAt": 1795723200000
+      },
+      {
+        "itemId": 5010,
+        "name": "Cedar Sap",
+        "price": 45500,
+        "inStock": 3547,
+        "totalTrades": 174130367,
+        "fourteenDayVolume": 75442,
+        "updatedAt": 1795723200000
+      },
+      {
+        "itemId": 5020,
+        "name": "Thuja Sap",
+        "price": 46600,
+        "inStock": 0,
+        "totalTrades": 16977540,
+        "fourteenDayVolume": 30389,
+        "updatedAt": 1795723200000
+      },
+      {
+        "itemId": 5024,
+        "name": "Snowfield Cedar Sap",
+        "price": 46600,
+        "inStock": 0,
+        "totalTrades": 61904450,
+        "fourteenDayVolume": 15401,
+        "updatedAt": 1795723200000
+      },
+      {
+        "itemId": 5301,
+        "name": "Clear Liquid Reagent",
+        "price": 14000,
+        "inStock": 75507,
+        "totalTrades": 506396881,
+        "fourteenDayVolume": 160816,
+        "updatedAt": 1795723200000
+      },
+      {
+        "itemId": 5302,
+        "name": "Pure Powder Reagent",
+        "price": 14000,
+        "inStock": 14443,
+        "totalTrades": 343042574,
+        "fourteenDayVolume": 202266,
+        "updatedAt": 1795723200000
+      },
+      {
+        "itemId": 5402,
+        "name": "Silver Azalea",
+        "price": 234,
+        "inStock": 6902,
+        "totalTrades": 373685949,
+        "fourteenDayVolume": 67567,
+        "updatedAt": 1795723200000
+      },
+      {
+        "itemId": 5403,
+        "name": "Fire Flake Flower",
+        "price": 356,
+        "inStock": 0,
+        "totalTrades": 107768325,
+        "fourteenDayVolume": 16575,
+        "updatedAt": 1795723200000
+      },
+      {
+        "itemId": 5406,
+        "name": "Everlasting Herb",
+        "price": 187000,
+        "inStock": 239,
+        "totalTrades": 48105757,
+        "fourteenDayVolume": 18053,
+        "updatedAt": 1795723200000
+      },
+      {
+        "itemId": 5407,
+        "name": "Fortune Teller Mushroom",
+        "price": 645,
+        "inStock": 0,
+        "totalTrades": 74805603,
+        "fourteenDayVolume": 19674,
+        "updatedAt": 1795723200000
+      },
+      {
+        "itemId": 5408,
+        "name": "Arrow Mushroom",
+        "price": 580,
+        "inStock": 960,
+        "totalTrades": 72881522,
+        "fourteenDayVolume": 15764,
+        "updatedAt": 1795723200000
+      },
+      {
+        "itemId": 5409,
+        "name": "Dwarf Mushroom",
+        "price": 660,
+        "inStock": 0,
+        "totalTrades": 49042399,
+        "fourteenDayVolume": 17239,
+        "updatedAt": 1795723200000
+      },
+      {
+        "itemId": 5410,
+        "name": "Cloud Mushroom",
+        "price": 525,
+        "inStock": 2432,
+        "totalTrades": 112676064,
+        "fourteenDayVolume": 11076,
+        "updatedAt": 1795723200000
+      },
+      {
+        "itemId": 5411,
+        "name": "Sky Mushroom",
+        "price": 675,
+        "inStock": 0,
+        "totalTrades": 29525592,
+        "fourteenDayVolume": 7864,
+        "updatedAt": 1795723200000
+      },
+      {
+        "itemId": 5412,
+        "name": "Tiger Mushroom",
+        "price": 730,
+        "inStock": 11,
+        "totalTrades": 78976713,
+        "fourteenDayVolume": 15247,
+        "updatedAt": 1795723200000
+      },
+      {
+        "itemId": 5413,
+        "name": "Emperor Mushroom",
+        "price": 620,
+        "inStock": 0,
+        "totalTrades": 25153105,
+        "fourteenDayVolume": 9218,
+        "updatedAt": 1795723200000
+      },
+      {
+        "itemId": 5414,
+        "name": "Ghost Mushroom",
+        "price": 775,
+        "inStock": 0,
+        "totalTrades": 27866274,
+        "fourteenDayVolume": 2404,
+        "updatedAt": 1795723200000
+      },
+      {
+        "itemId": 5416,
+        "name": "Hump Mushroom",
+        "price": 3510,
+        "inStock": 0,
+        "totalTrades": 1582159,
+        "fourteenDayVolume": 378,
+        "updatedAt": 1795723200000
+      },
+      {
+        "itemId": 5417,
+        "name": "Bluffer Mushroom",
+        "price": 3260,
+        "inStock": 0,
+        "totalTrades": 1645305,
+        "fourteenDayVolume": 243,
+        "updatedAt": 1795723200000
+      },
+      {
+        "itemId": 5418,
+        "name": "Ancient Mushroom",
+        "price": 3510,
+        "inStock": 0,
+        "totalTrades": 837933,
+        "fourteenDayVolume": 122,
+        "updatedAt": 1795723200000
+      },
+      {
+        "itemId": 5419,
+        "name": "Amanita Mushroom",
+        "price": 2630,
+        "inStock": 0,
+        "totalTrades": 1088807,
+        "fourteenDayVolume": 145,
+        "updatedAt": 1795723200000
+      },
+      {
+        "itemId": 5420,
+        "name": "Truffle Mushroom",
+        "price": 187000,
+        "inStock": 0,
+        "totalTrades": 4300881,
+        "fourteenDayVolume": 17589,
+        "updatedAt": 1795723200000
+      },
+      {
+        "itemId": 5439,
+        "name": "Wild Grass",
+        "price": 9700,
+        "inStock": 0,
+        "totalTrades": 725132227,
+        "fourteenDayVolume": 144046,
+        "updatedAt": 1795723200000
+      },
+      {
+        "itemId": 5960,
+        "name": "Trace of Nature",
+        "price": 280000,
+        "inStock": 0,
+        "totalTrades": 335750750,
+        "fourteenDayVolume": 269056,
+        "updatedAt": 1795723200000
+      },
+      {
+        "itemId": 6203,
+        "name": "Fox Blood",
+        "price": 46600,
+        "inStock": 0,
+        "totalTrades": 144397438,
+        "fourteenDayVolume": 67363,
+        "updatedAt": 1795723200000
+      },
+      {
+        "itemId": 6205,
+        "name": "Pig Blood",
+        "price": 23700,
+        "inStock": 20572,
+        "totalTrades": 251988945,
+        "fourteenDayVolume": 63916,
+        "updatedAt": 1795723200000
+      },
+      {
+        "itemId": 6213,
+        "name": "Bear Blood",
+        "price": 46600,
+        "inStock": 0,
+        "totalTrades": 90137060,
+        "fourteenDayVolume": 55265,
+        "updatedAt": 1795723200000
+      },
+      {
+        "itemId": 6351,
+        "name": "Legendary Beast's Blood",
+        "price": 154000,
+        "inStock": 0,
+        "totalTrades": 21432612,
+        "fourteenDayVolume": 5913,
+        "updatedAt": 1795723200000
+      },
+      {
+        "itemId": 6352,
+        "name": "Tyrant's Blood",
+        "price": 149000,
+        "inStock": 0,
+        "totalTrades": 16500650,
+        "fourteenDayVolume": 2640,
+        "updatedAt": 1795723200000
+      },
+      {
+        "itemId": 6353,
+        "name": "Clown's Blood",
+        "price": 29500,
+        "inStock": 0,
+        "totalTrades": 79008097,
+        "fourteenDayVolume": 45386,
+        "updatedAt": 1795723200000
+      },
+      {
+        "itemId": 6355,
+        "name": "Wise Man's Blood",
+        "price": 135000,
+        "inStock": 0,
+        "totalTrades": 21244033,
+        "fourteenDayVolume": 4792,
+        "updatedAt": 1795723200000
+      },
+      {
+        "itemId": 6601,
+        "name": "Oil of Regeneration",
+        "price": 166000,
+        "inStock": 2243,
+        "totalTrades": 17818507,
+        "fourteenDayVolume": 6956,
+        "updatedAt": 1795723200000
+      },
+      {
+        "itemId": 6602,
+        "name": "Oil of Storms",
+        "price": 219000,
+        "inStock": 5791,
+        "totalTrades": 11465354,
+        "fourteenDayVolume": 5886,
+        "updatedAt": 1795723200000
+      },
+      {
+        "itemId": 6603,
+        "name": "Oil of Fortitude",
+        "price": 110000,
+        "inStock": 0,
+        "totalTrades": 20812237,
+        "fourteenDayVolume": 13647,
+        "updatedAt": 1795723200000
+      },
+      {
+        "itemId": 6604,
+        "name": "Oil of Corruption",
+        "price": 78500,
+        "inStock": 0,
+        "totalTrades": 16785332,
+        "fourteenDayVolume": 10335,
+        "updatedAt": 1795723200000
+      },
+      {
+        "itemId": 6605,
+        "name": "Oil of Tranquility",
+        "price": 251000,
+        "inStock": 12319,
+        "totalTrades": 11280141,
+        "fourteenDayVolume": 9687,
+        "updatedAt": 1795723200000
+      },
+      {
+        "itemId": 6656,
+        "name": "Purified Water",
+        "price": 5300,
+        "inStock": 0,
+        "totalTrades": 282477226,
+        "fourteenDayVolume": 124208,
+        "updatedAt": 1795723200000
+      }
+    ]
+  }
+}
