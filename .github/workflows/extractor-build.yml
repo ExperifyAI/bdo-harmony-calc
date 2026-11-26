@@ -1,0 +1,58 @@
+name: Build reviewed BDO extractor
+on:
+  push:
+    branches: [tools/extractor-build]
+    paths: ['.github/workflows/extractor-build.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  build:
+    runs-on: windows-latest
+    timeout-minutes: 20
+    steps:
+      - name: Checkout pinned upstream source
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          repository: iDevelopThings/bdo-data-extractor
+          ref: 5bf11bd7bc60dcbb6126be34bf3d76633abdd8b2
+          persist-credentials: false
+      - name: Install Go
+        uses: actions/setup-go@40f1582b2485089dde7abd97c1529aa768e1baff
+        with:
+          go-version-file: go.mod
+          cache: false
+      - name: Verify dependencies and test
+        shell: pwsh
+        run: |
+          $ErrorActionPreference = 'Stop'
+          $env:GOFLAGS = '-mod=readonly'
+          go version
+          go mod download
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          go mod verify
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          go test ./...
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+      - name: Compile and record provenance
+        shell: pwsh
+        run: |
+          $ErrorActionPreference = 'Stop'
+          $env:GOFLAGS = '-mod=readonly'
+          $env:CGO_ENABLED = '0'
+          New-Item -ItemType Directory -Path dist -Force | Out-Null
+          go build -trimpath -o dist/bdo-data-extractor.exe .
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          Copy-Item LICENSE.md dist/LICENSE.md
+          $hash = (Get-FileHash dist/bdo-data-extractor.exe -Algorithm SHA256).Hash.ToLowerInvariant()
+          "$hash  bdo-data-extractor.exe" | Set-Content dist/SHA256SUMS.txt
+          git rev-parse HEAD | Set-Content dist/SOURCE-REVISION.txt
+          go version -m dist/bdo-data-extractor.exe | Set-Content dist/BUILD-INFO.txt
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+      - name: Upload build
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: bdo-extractor-windows
+          path: dist/
+          if-no-files-found: error
+          retention-days: 7
