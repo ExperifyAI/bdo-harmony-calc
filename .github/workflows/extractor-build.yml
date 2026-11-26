@@ -29,7 +29,7 @@ jobs:
             if ([regex]::Matches($src,$pattern).Count -ne 1) { throw "Unexpected stage: $stage" }
             $src = [regex]::Replace($src,$pattern,'')
           }
-          Set-Content $file $src
+          Set-Content -Path $file -Value $src -NoNewline
           git diff --check
           if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
           git diff
