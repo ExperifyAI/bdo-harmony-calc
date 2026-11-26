@@ -17,6 +17,22 @@ jobs:
           repository: iDevelopThings/bdo-data-extractor
           ref: 5bf11bd7bc60dcbb6126be34bf3d76633abdd8b2
           persist-credentials: false
+      - name: Limit build to crafting datasets
+        shell: pwsh
+        run: |
+          $ErrorActionPreference = 'Stop'
+          $file = 'internal/build/build.go'
+          $src = Get-Content $file -Raw
+          $skip = @('character progression','adventure journals','life skill progression','market categories','world','npcs','zones','fishing','knowledge','caphras')
+          foreach ($stage in $skip) {
+            $pattern = '(?m)^\s*\{name: "' + [regex]::Escape($stage) + '", fn: b\.\w+\},\r?\n'
+            if ([regex]::Matches($src,$pattern).Count -ne 1) { throw "Unexpected stage: $stage" }
+            $src = [regex]::Replace($src,$pattern,'')
+          }
+          Set-Content $file $src
+          git diff --check
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          git diff
       - name: Install Go
         uses: actions/setup-go@40f1582b2485089dde7abd97c1529aa768e1baff
         with:
@@ -47,12 +63,13 @@ jobs:
           $hash = (Get-FileHash dist/bdo-data-extractor.exe -Algorithm SHA256).Hash.ToLowerInvariant()
           "$hash  bdo-data-extractor.exe" | Set-Content dist/SHA256SUMS.txt
           git rev-parse HEAD | Set-Content dist/SOURCE-REVISION.txt
+          git diff -- internal/build/build.go | Set-Content dist/CRAFTING-PATCH.diff
           go version -m dist/bdo-data-extractor.exe | Set-Content dist/BUILD-INFO.txt
           if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
       - name: Upload build
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
         with:
-          name: bdo-extractor-windows
+          name: bdo-extractor-crafting-only-windows
           path: dist/
           if-no-files-found: error
           retention-days: 7
