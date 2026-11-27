@@ -17,22 +17,114 @@ jobs:
           repository: iDevelopThings/bdo-data-extractor
           ref: 5bf11bd7bc60dcbb6126be34bf3d76633abdd8b2
           persist-credentials: false
-      - name: Limit build to crafting datasets
+      - name: Create independent minimal CLI and fixtures
         shell: pwsh
         run: |
-          $ErrorActionPreference = 'Stop'
-          $file = 'internal/build/build.go'
-          $src = Get-Content $file -Raw
-          $skip = @('character progression','adventure journals','life skill progression','market categories','world','npcs','zones','fishing','knowledge','caphras')
-          foreach ($stage in $skip) {
-            $pattern = '(?m)^\s*\{name: "' + [regex]::Escape($stage) + '", fn: b\.\w+\},\r?\n'
-            if ([regex]::Matches($src,$pattern).Count -ne 1) { throw "Unexpected stage: $stage" }
-            $src = [regex]::Replace($src,$pattern,'')
+          New-Item -ItemType Directory -Path cmd/minimal -Force | Out-Null
+          @'
+          package main
+          
+          import (
+           "encoding/json"
+           "flag"
+           "fmt"
+           "os"
+           "path/filepath"
+           "strings"
+           "strconv"
+           "github.com/idevelopthings/bdo-data-extractor/internal/loc"
+           "github.com/idevelopthings/bdo-data-extractor/internal/paz"
+           "github.com/idevelopthings/bdo-data-extractor/internal/tables"
+          )
+          
+          type ingredient struct { ID uint32 `json:"id"`; Count int `json:"count"` }
+          type record struct { Output uint32 `json:"output"`; Type string `json:"type"`; Inputs []ingredient `json:"inputs"`; Source string `json:"source"` }
+          func parse(data []byte, source string) []record {
+           x:=tables.ParseItemInfo(data,nil)
+           if x==nil{return nil}
+           var out []record
+           for _,r:=range x.Recipes {
+            if r.Type=="HOUSE" {continue}
+            v:=record{Output:x.Key,Type:r.Type,Source:source}
+            for _,i:=range r.Inputs {v.Inputs=append(v.Inputs,ingredient{i.Item.ID(),i.Count})}
+            if len(v.Inputs)>0 {out=append(out,v)}
+           }
+           return out
           }
-          Set-Content -Path $file -Value $src -NoNewline
-          git diff --check
-          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
-          git diff
+          func write(dir,name string,v any) error {
+           b,e:=json.Marshal(v);if e!=nil{return e}
+           return os.WriteFile(filepath.Join(dir,name),b,0600)
+          }
+          func module(report map[string]string,name string,fn func()error) {
+           defer func(){if p:=recover();p!=nil{report[name]=fmt.Sprint("panic: ",p);fmt.Println(name,report[name])}}()
+           if e:=fn();e!=nil{report[name]=e.Error()}else{report[name]="OK"}
+           fmt.Println(name,report[name])
+          }
+          func main(){
+           if len(os.Args)>1 && os.Args[1]=="build"{os.Args=append(os.Args[:1],os.Args[2:]...)}
+           game:=flag.String("game","","game directory")
+           out:=flag.String("out","","new output directory")
+           lang:=flag.String("lang","en","language")
+           flag.Parse()
+           if *game==""||*out==""{fmt.Println("Specify --game and --out");os.Exit(2)}
+           g,e:=filepath.Abs(*game);if e!=nil{panic(e)}
+           o,e:=filepath.Abs(*out);if e!=nil{panic(e)}
+           g,e=filepath.EvalSymlinks(g);if e!=nil{panic(e)}
+           parent,e:=filepath.EvalSymlinks(filepath.Dir(o));if e!=nil{panic(e)}
+           o=filepath.Join(parent,filepath.Base(o))
+           rel,e:=filepath.Rel(g,o);if e==nil && rel!=".." && !strings.HasPrefix(rel,".."+string(os.PathSeparator)){fmt.Println("Output must be outside game directory");os.Exit(2)}
+           if e=os.Mkdir(o,0700);e!=nil{fmt.Println("Use a new output folder:",e);os.Exit(2)}
+           report:=map[string]string{}
+           module(report,"items",func()error{
+            gs,e:=loc.LoadGame(g,*lang);if e!=nil{return e}
+            names:=map[uint32]string{}
+            for id,v:=range gs.Items{if v.Name!=""{names[id]=v.Name}}
+            if len(names)==0{return fmt.Errorf("no item names")}
+            fmt.Println("Item names:",len(names))
+            return write(o,"items.json",names)
+           })
+           var src *paz.Source
+           module(report,"archive",func()error{var e error;src,e=paz.OpenSource(g);return e})
+           if src!=nil{
+           defer src.Close()
+           module(report,"recipes",func()error{
+            rows:=[]record{}; seen:=map[uint32]bool{}; skipped:=0; counts:=map[string]int{}
+            for _,folder:=range []string{"ui_html/xml/"+strings.ToLower(*lang),"ui_html/xml"}{
+             for _,idx:=range src.Index.FilesUnder(folder){
+              p:=src.Index.Path(idx)
+              base:=filepath.Base(strings.ReplaceAll(p,"\\","/"))
+              if !strings.HasSuffix(strings.ToLower(base),".xml"){continue}
+              id,e:=strconv.ParseUint(base[:len(base)-4],10,32);if e!=nil||seen[uint32(id)]{continue}
+              b,e:=src.Archive.Content(src.Index.Files[idx]);if e!=nil{skipped++;continue}
+              rr:=parse(b,p);if len(rr)==0{continue}
+              seen[uint32(id)]=true;rows=append(rows,rr...)
+              for _,r:=range rr{counts[r.Type]++}
+             }
+            }
+            fmt.Println("Recipe records:",len(rows),"by method:",counts,"unreadable:",skipped)
+            if len(rows)==0{return fmt.Errorf("no recipes recovered")}
+            if e:=write(o,"recipes.json",rows);e!=nil{return e}
+            return write(o,"recipe-report.json",map[string]any{"counts":counts,"unreadable":skipped,"yield":"unknown","note":"XML quantities and output identities require validation; parallel byproducts may appear as recipes"})
+           })
+           module(report,"cooking mastery",func()error{b,e:=src.Read("cookingstatdata.bss");if e!=nil{return e};v,e:=tables.DecodeCookingMastery(b);if e!=nil{return e};return write(o,"mastery-cooking.json",v)})
+           module(report,"alchemy mastery",func()error{b,e:=src.Read("alchemystatdata.bss");if e!=nil{return e};v,e:=tables.DecodeAlchemyMastery(b);if e!=nil{return e};return write(o,"mastery-alchemy.json",v)})
+           module(report,"processing mastery",func()error{b,e:=src.Read("manufacturingstat.bss");if e!=nil{return e};v,e:=tables.DecodeProcessingMastery(b);if e!=nil{return e};return write(o,"mastery-processing.json",v)})
+           module(report,"manufacture",func()error{b,e:=src.Read("manufacture.bss");if e!=nil{return e};v,e:=tables.DecodeManufacture(b);if e!=nil{return e};return write(o,"manufacture.json",v)})
+           }
+           if e:=write(o,"diagnostics.json",report);e!=nil{fmt.Println(e);os.Exit(1)}
+           if report["recipes"]!="OK"||report["items"]!="OK"{os.Exit(1)}
+           fmt.Println("Core datasets saved to",o)
+          }
+          '@ | Set-Content cmd/minimal/main.go
+          @'
+          package main
+          import "testing"
+          func TestRecipe(t *testing.T){
+           r:=parse([]byte(`<itemInfo><itemKey>704</itemKey><alchemy><item><id>5001</id></item><item><id>5001</id></item></alchemy><manufacture action="MANUFACTURE_ALCHEMY"><item><id>5301</id><count>3</count></item></manufacture></itemInfo>`),"fixture")
+           if len(r)!=2||r[0].Output!=704||r[0].Inputs[0].Count!=2||r[1].Type!="SIMPLE_ALCHEMY"||r[1].Inputs[0].Count!=3{t.Fatalf("unexpected: %+v",r)}
+           if len(parse([]byte("bad"),"fixture"))!=0{t.Fatal("invalid XML accepted")}
+          }
+          '@ | Set-Content cmd/minimal/main_test.go
       - name: Install Go
         uses: actions/setup-go@40f1582b2485089dde7abd97c1529aa768e1baff
         with:
@@ -57,19 +149,20 @@ jobs:
           $env:GOFLAGS = '-mod=readonly'
           $env:CGO_ENABLED = '0'
           New-Item -ItemType Directory -Path dist -Force | Out-Null
-          go build -trimpath -o dist/bdo-data-extractor.exe .
+          go build -trimpath -o dist/bdo-data-extractor.exe ./cmd/minimal
           if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
           Copy-Item LICENSE.md dist/LICENSE.md
           $hash = (Get-FileHash dist/bdo-data-extractor.exe -Algorithm SHA256).Hash.ToLowerInvariant()
           "$hash  bdo-data-extractor.exe" | Set-Content dist/SHA256SUMS.txt
           git rev-parse HEAD | Set-Content dist/SOURCE-REVISION.txt
-          git diff -- internal/build/build.go | Set-Content dist/CRAFTING-PATCH.diff
+          Copy-Item cmd/minimal/main.go dist/MINIMAL-SOURCE.go.txt
+          Copy-Item cmd/minimal/main_test.go dist/MINIMAL-TEST.go.txt
           go version -m dist/bdo-data-extractor.exe | Set-Content dist/BUILD-INFO.txt
           if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
       - name: Upload build
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
         with:
-          name: bdo-extractor-crafting-only-windows
+          name: bdo-extractor-minimal-windows
           path: dist/
           if-no-files-found: error
           retention-days: 7
